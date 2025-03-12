@@ -1,0 +1,9 @@
+With the database setup for the caching component, the component needs to update the api-deployment configuration to add the environment variable to the container to reach the redis instance.
+This patch is defined in the caching directory as it is part of the caching functionality and it is defined in a separate file called api-patch.yaml
+
+Create a Strategic merge Patch and add the following environment variable:
+Name: REDIS_CONNECTION
+Value: redis-service
+
+added the caching component to the enterprise edition of the application by updating the kustomization.yaml file in overlays/enterprise 
+
